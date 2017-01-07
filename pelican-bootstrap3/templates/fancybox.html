@@ -1,0 +1,21 @@
+{% macro fancybox(thumb, src, desc='', class='') -%}
+<figure {% if class %}class="{{class}}"{% endif %}>
+  <a class="fancybox" rel="group" id="single_image" href="{{src}}">
+    <img src="{{thumb}}" />
+  </a>
+    {% if desc %}
+      <figcaption>{{desc}}<figcaption/>
+    {% endif %}
+</figure>
+{%- endmacro %}
+
+{% macro fancybox_gallery(thumb, src, desc='', class='') -%}
+<figure {% if class %}class="{{class}}"{% endif %}>
+  <a class="fancybox fancybox_gallery" rel="group" id="single_image" href="{{src}}">
+    <img src="{{thumb}}" />
+  </a>
+    {% if desc %}
+      <figcaption>{{desc}}<figcaption/>
+    {% endif %}
+</figure>
+{%- endmacro %}
